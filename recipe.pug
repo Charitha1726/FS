@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title= recipe.name
+    link(rel="stylesheet", href="/recipe.css")
+  body
+    h1= recipe.name
+    img(src=recipe.image, alt=recipe.name, width="300")
+
+    h2 Ingredients
+    ul
+      each ingredient in recipe.ingredients
+        li(style=ingredient.highlight ? 'color: green; font-weight: bold;' : '')= ingredient.item
+
+    h2 Steps
+    ol
+      each step in recipe.steps
+        li= step
